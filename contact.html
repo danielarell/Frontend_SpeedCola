@@ -48,14 +48,14 @@ https://templatemo.com/tm-591-villa-agency
       <div class="row">
         <div class="col-lg-8 col-md-8">
           <ul class="info">
-            <li><i class="fa fa-envelope"></i> info@company.com</li>
-            <li><i class="fa fa-map"></i> Sunny Isles Beach, FL 33160</li>
+            <li><i class="fa fa-envelope"></i> speedcola@company.com</li>
+            <li><i class="fa fa-map"></i> GDL, Jalisco</li>
           </ul>
         </div>
         <div class="col-lg-4 col-md-4">
           <ul class="social-links">
             <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-            <li><a href="https://x.com/minthu" target="_blank"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
             <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
             <li><a href="#"><i class="fab fa-instagram"></i></a></li>
           </ul>
@@ -67,31 +67,110 @@ https://templatemo.com/tm-591-villa-agency
   <!-- ***** Header Area Start ***** -->
   <header class="header-area header-sticky">
     <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <nav class="main-nav">
-                    <!-- ***** Logo Start ***** -->
-                    <a href="index.html" class="logo">
-                        <h1>Villa</h1>
-                    </a>
-                    <!-- ***** Logo End ***** -->
-                    <!-- ***** Menu Start ***** -->
-                    <ul class="nav">
-                      <li><a href="index.html">Home</a></li>
-                      <li><a href="properties.html">Properties</a></li>
-                      <li><a href="property-details.html">Property Details</a></li>
-                      <li><a href="contact.html" class="active">Contact Us</a></li>
-                      <li><a href="#"><i class="fa fa-calendar"></i> Schedule a visit</a></li>
-                  </ul>   
-                    <a class='menu-trigger'>
-                        <span>Menu</span>
-                    </a>
-                    <!-- ***** Menu End ***** -->
-                </nav>
-            </div>
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <a href="index.html" class="logo">
+              <h1>SpeedCola</h1>
+            </a>
+            <!-- ***** Logo End ***** -->
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="properties.html">Services</a></li>
+              <li><a href="user-details.html">User Details</a></li>
+              <li><a href="contact.html" class="active">About Us</a></li>
+              <li>
+                <!-- Botón para abrir modal de Login -->
+                <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
+                  <i class="fa fa-user"></i> Login
+                </a>
+              </li>
+              <li><a href="#"><i class="fa fa-calendar"></i> Schedule a visit</a></li>
+            </ul>
+            <a class="menu-trigger">
+              <span>Menu</span>
+            </a>
+            <!-- ***** Menu End ***** -->
+          </nav>
         </div>
+      </div>
     </div>
   </header>
+
+  <!-- ================== LOGIN MODAL ================== -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content p-4">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">Login</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="/login" method="POST">
+            <div class="mb-3">
+              <label for="loginEmail" class="form-label">Email</label>
+              <input type="email" class="form-control" id="loginEmail" name="email" required>
+            </div>
+            <div class="mb-3">
+              <label for="loginPassword" class="form-label">Password</label>
+              <input type="password" class="form-control" id="loginPassword" name="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100" style="background-color: orangered; border-color: orangered;">Login</button>
+          </form>
+          <div class="text-center mt-3">
+            <small>Don’t have an account? 
+              <a href="#" data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-dismiss="modal" style="color: orangered;">
+                Register here
+              </a>
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================== REGISTER MODAL ================== -->
+  <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content p-4">
+        <div class="modal-header">
+          <h5 class="modal-title" id="registerModalLabel">Register</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="index.html" method="GET">
+            <div class="mb-3">
+              <label for="regName" class="form-label">Full Name</label>
+              <input type="text" class="form-control" id="regName" name="nombre" required>
+            </div>
+            <div class="mb-3">
+              <label for="regLocation" class="form-label">Location</label>
+              <input type="text" class="form-control" id="regLocation" name="ubicacion" required>
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="isProvider" name="isProvider">
+              <label class="form-check-label" for="isProvider">Register as Provider</label>
+            </div>
+            <div class="mb-3">
+              <label for="regEmail" class="form-label">Email</label>
+              <input type="email" class="form-control" id="regEmail" name="email" required>
+            </div>
+            <div class="mb-3">
+              <label for="regPassword" class="form-label">Password</label>
+              <input type="password" class="form-control" id="regPassword" name="password" required>
+            </div>
+            <div class="mb-3">
+              <label for="regPhone" class="form-label">Phone</label>
+              <input type="tel" class="form-control" id="regPhone" name="telefono" required>
+            </div>
+            <button type="submit" class="btn btn-success w-100" style=" background-color: orangered; border-color: orangered;">Register</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- ***** Header Area End ***** -->
 
   <div class="page-heading header-text">
@@ -113,7 +192,7 @@ https://templatemo.com/tm-591-villa-agency
             <h6>| Contact Us</h6>
             <h2>Get In Touch With Our Agents</h2>
           </div>
-          <p>When you really need to download free CSS templates, please remember our website TemplateMo. Also, tell your friends about our website. Thank you for visiting. There is a variety of Bootstrap HTML CSS templates on our website. If you need more information, please contact us.</p>
+          <p>Lorem Ipsum.</p>
           <div class="row">
             <div class="col-lg-12">
               <div class="item phone">
@@ -124,7 +203,7 @@ https://templatemo.com/tm-591-villa-agency
             <div class="col-lg-12">
               <div class="item email">
                 <img src="assets/images/email-icon.png" alt="" style="max-width: 52px;">
-                <h6>info@villa.co<br><span>Business Email</span></h6>
+                <h6>speedcola@services.com<br><span>Business Email</span></h6>
               </div>
             </div>
           </div>
@@ -173,12 +252,10 @@ https://templatemo.com/tm-591-villa-agency
     </div>
   </div>
 
-  <footer>
+   <footer>
     <div class="container">
-      <div class="col-lg-12">
-        <p>Copyright © 2048 Villa Agency Co., Ltd. All rights reserved. 
-        
-        Design: <a rel="nofollow" href="https://templatemo.com" target="_blank">TemplateMo</a></p>
+      <div class="col-lg-8">
+        <p>Copyright © 2048 SpeedCola Co., Ltd. All rights reserved. </p>
       </div>
     </div>
   </footer>
